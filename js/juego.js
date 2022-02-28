@@ -27,22 +27,22 @@ function cambiarGuionesPalabras(letras, guion){
     
     swal({
               icon: "error",
-              title: '¡¡GAME OVER!!',
+              title: '¡¡Fin del juego!!',
               text: 'la palabra era: ' + palabra,
           }).then((value) => {
             if(value){
-              window.location.href = "https://cdvcristiann.github.io/";
+              window.location.href = "https://cdvcristiann.github.io/Challenge-OracleOne-Ahorcado.io/";
             }
           });
   }
   if((cambiarGuion.replace(/ /g, ""))==palabra){
     swal({
               icon: "success",
-              title: '¡¡WINNER!!',
+              title: '¡¡Ganaste, Felicidades!!!',
               text: 'la palabra era: ' + palabra,
           }).then((value) => {
             if(value){
-              window.location.href = "https://cdvcristiann.github.io/";
+              window.location.href = "https://cdvcristiann.github.io/Challenge-OracleOne-Ahorcado.io/";
             }
           });
         }

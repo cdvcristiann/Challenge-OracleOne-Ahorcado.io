@@ -1,5 +1,6 @@
 btnIniciar.addEventListener("click",function(event){
-  event.preventDefault();
+  event.preventDefault();  
+    alertaPalabraAg.innerHTML = ' '
     btnJuego()
     btnPausa()    
    
@@ -13,7 +14,7 @@ btnAgregarPalabra.addEventListener("click",function(event){
     })
     .then((value) => {
       lista.push(value);
-      alertaPalabraAg.innerHTML = 'La Palabra '+ value + ' agregada con EXITO'
+      alertaPalabraAg.innerHTML = 'La Palabra '+ value + ' se agrego con EXITO'
       console.log(lista)
     });    
    

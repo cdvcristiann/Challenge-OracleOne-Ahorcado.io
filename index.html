@@ -40,34 +40,40 @@
   		<button class="btn btn-primary" type="button" id="btnIniciar">Iniciar Juego</button>
   		<button class="btn btn-primary" type="button" id="btnAgregarPalabra">Agregar Palabra</button>
 		</div>
+		
 	</div>
 	<hr class="mt-3">
-	<div>
-	<div class="alert alert-success" role="alert" id="alert">
-  
-	</div></div>
+	<div class="alert alert-success" role="alert" id="alert"></div>
+	<div class="card" style="width: 24rem;">
+        <h3>Requisitos:</h3>
+		<ul class="list-group list-group-flush">
+		  <li class="list-group-item">Debe funcionar solo con letras mayúsculas;</li>
+		  <li class="list-group-item">No deben ser utilizadas letras con acentos ni caracteres especiales;</li>
+		  <li class="list-group-item">No debe ser posible escribir números dentro del juego.</li>
+		</ul>
+	</div>
   <div class="row" id="juego">
     <div class="col-2 align-self-start">
       <input class="form-control form-control-sm mt-3" type="text" placeholder="ingrese una letra" aria-label=".form-control-sm example" maxlength="1" onkeydown="onKeyDownHandler(event)"; id="input">
     </div>
-    <div class="col align-self-center">
-      <canvas width="400" height="400"></canvas>
-    </div>
-   <div class="card" style="width: 30rem;">
-  <div class="card-body">
-    <h5 class="card-title" id="gameOver"> </h5>
-    <h6 class="card-subtitle mb-2 text-muted" id="palabra"> </h6>
-    <p class="card-text pt-2" id="guion"></p>
-    <p class="card-text pt-2" id="letraRepetida"></p>
-    <p class="card-text pt-2" id="letraIngresada"></p>
-  </div>
-</div>
-  </div>
-</div>
-
-
-
-</div>
+    <hr>
+    <div class="row justify-content-around">
+	    <div class="col-4">
+  	    <canvas width="400" height="400"></canvas>
+    	</div>
+    	<div class="col-4">
+      	<div class="card" style="width: 30rem;">
+  				<div class="card-body">
+    				<h5 class="card-title" id="gameOver"> </h5>
+    				<h6 class="card-subtitle mb-2 text-muted" id="palabra"> </h6>
+    				<p class="card-text pt-2" id="guion"></p>
+    				<p class="card-text pt-2" id="letraRepetida"></p>
+    				<p class="card-text pt-2" id="letraIngresada"></p>
+  				</div>
+				</div>
+    	</div>
+  	</div>
+	</div>
 
 <!-- Footer -->
 	<div class="my-4">
