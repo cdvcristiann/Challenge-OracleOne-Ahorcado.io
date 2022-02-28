@@ -29,3 +29,12 @@ de fondo o si hay problemas para cargarla */
 background-color: #66999;
 
 }
+
+li {
+	 opacity: 0.5;
+
+list-style-type: none;
+margin:0;
+padding:0;
+}
+}

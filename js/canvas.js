@@ -2,13 +2,13 @@ var pantalla = document.querySelector('canvas');
 var pincel = pantalla.getContext('2d');
 
 
+
 //PIZARRA
 	pincel.globalAlpha = 0.4;
 	pincel.fillStyle = '#FCD9B3';//propiedad para el color de la pizzarra
 	pincel.fillRect(0,0,600,400);//funcion del tamaño y ubicacion de la p izarra
 
 //TRONCO
-	lineas(100,80,10,235, 'black')
 
 //TRIANGULO
 	pincel.fillStyle = 'black';
@@ -19,32 +19,32 @@ var pincel = pantalla.getContext('2d');
 	pincel.fill();
 
 //PALO HORIZONTAL
-	lineas(100,80,150,10, 'black')
+	
 
 //SOGA
-	lineas(245,85,03,55, 'black')
+	
 
 //CIRCULO GRANDE CABEZA
-	diseniarCabeza(245,160,25,'black');	
+	
 
 //CIRCULO CHICO CABEZA
-	diseniarCabeza(245,160,20, '#FCD9B3');
+	
 
 //CUERPO
-	lineas(245,185,04,60, 'black');
+	
 
 
 //BRAZO derecho	
-	lineasDiagonales(296,160,'black',3,246,200);
+	
 
 //BRAZO izquierdo
-	lineasDiagonales(189,159,'black',3,246,200);
+	
 
 //pierna derecho
-	lineasDiagonales(290,275,'black',3,246,243);
+	
 
 //pierna derecho
-  	lineasDiagonales(190,276,'black',3,246,243);
+  	
 
 /*/guion
 	lineasDiagonales(200,370,'black',3,220, 370);
@@ -53,12 +53,7 @@ var pincel = pantalla.getContext('2d');
 	lineasDiagonales(310,370,'red  ',3,290, 370);*/
 
 
-//looser derecha
-	lineasDiagonales(350,100,'red',8,150,280);
 
-
-//looser izquierdo
-	lineasDiagonales(150,100,'red',8,350,280);
 
 
 //ingresar texto

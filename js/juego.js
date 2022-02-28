@@ -1,43 +1,110 @@
-var entrada = document.querySelector('#entrada');
-entrada.addEventListener('input', entradainput);
-var palabra = 'daniel';
-agregarGuin();
+var palabraLoser = document.getElementById('palabra');
+var gameOver = document.getElementById('gameOver');
 
-function entradainput(letra){
-	letra = this.value
-	var letraEntrada = new RegExp(letra, 'i');
-		if (letraEntrada.test(palabra) && letra.length > 0){
-			ingresarTexto(201,360,'black', 'blue', letra, "bold 20px arial")
-		}
+function dibujarGuiones() {
+        let palabraConvertida = palabra.replace(/[a-z]/gm, "_ ");
+        palabraGuiones = palabraConvertida;
+        cambiarGuion = palabraGuiones;
+        return cambiarGuion;
+      };
 
-	};
-	
 
-function agregarGuin(){
-	var n = 200;
-	var x = 220; 
+function cambiarGuionesPalabras(letras, guion){
+  String.prototype.replaceAt = function(index, replacement) {
+    return this.substr(0, index) + replacement + this.substr(index + replacement.length);
+  };
+  for(var i=0;i<palabra.length;i++){
+    if (palabra[i] == letras) {
+        cambiarGuion = cambiarGuion.replaceAt(i * 2, letras);
+    }
+  };
+  if(errores == 1){
+    gameOver.innerHTML = '¡¡GAME OVER!!';
+    palabraLoser.innerHTML = 'la palabra era: ' + palabra;
 
-	var textX = 201;
-	var textoY = 360;
-	for(var i = 0; i < palabra.length; i = i+2){
-		lineasDiagonales(n,370,'black',3,x, 370);
-		ingresarTexto(textX,textoY,'black', 'blue', palabra.replaceAll(palabra[i], ' ')[i], "bold 20px arial");
-		
-		n += 50;
-		x += 10;
+    lineasDiagonales(350,100,'red',8,150,280);
+    lineasDiagonales(150,100,'red',8,350,280);
+    
+    swal({
+              icon: "error",
+              title: '¡¡GAME OVER!!',
+              text: 'la palabra era: ' + palabra,
+          }).then((value) => {
+            if(value){
+              window.location.href = "https://cdvcristiann.github.io/";
+            }
+          });
+  }
+  if((cambiarGuion.replace(/ /g, ""))==palabra){
+    swal({
+              icon: "success",
+              title: '¡¡WINNER!!',
+              text: 'la palabra era: ' + palabra,
+          }).then((value) => {
+            if(value){
+              window.location.href = "https://cdvcristiann.github.io/";
+            }
+          });
+        }
 
-		textX += 35;
+  console.log(cambiarGuion);
+  return cambiarGuion;    
+};
 
-		for(var j = i + 1; j < palabra.length; j++){	
-			ingresarTexto(textX,textoY,'red', 'blue', palabra.replaceAll(palabra[j], ' ')[j], "bold 20px arial")
-			lineasDiagonales(n,370,'black',3,x, 370);
-			
-			n += 10;
-			x += 50;
-			textX += 25;
-			break 
+function dibujarColgado(errores){   
+    switch (errores) {
+    case 9:
+      lineas(100,80,10,235, 'black');
+      console.log(errores);
+      break;
+    case 8:
+      lineas(100,80,150,10, 'black');
+      console.log(errores);
+      break;
+    case 7:
+      lineas(245,85,03,55, 'black');
+      console.log(errores);
+      break;
+    case 6:
+      diseniarCabeza(245,160,25,'black');
+      diseniarCabeza(245,160,20, '#FCD9B3');
+      console.log(errores);
+      break;
+    case 5:
+      lineas(245,185,04,60, 'black');
+      console.log(errores);
+      break;
+    case 4:
+      lineasDiagonales(296,160,'black',3,246,200);
+      console.log(errores);
+      break;
+    case 3:
+      lineasDiagonales(189,159,'black',3,246,200);
+      console.log(errores);
+      break;
+    case 2:
+      lineasDiagonales(290,275,'black',3,246,243);
+      console.log(errores);
+      break;
+    case 1:
+      lineasDiagonales(190,276,'black',3,246,243);
+      console.log(errores);
+      break;
+    case 0:
+    
+      console.log(errores);
+      break;
+    };
+};
 
-		}
 
-	}
+function letrasRepetidas(letra, letras){
+  if (letra.test(letrasIngresadas)) {
+    if (!letra.test(letraRepetida)) {
+    letraRepetida += letras + '-';
+    letraRep.innerHTML = 'LETRAS REPETIDAS : ' + letraRepetida
+    }
+  }else{    
+      letrasIngresadas += letras + '-';
+  }
 };

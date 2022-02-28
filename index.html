@@ -36,24 +36,37 @@
 	<div class="row justify-content-center mt-3">
 	  <div class="display-4 col-4">
 	    <h1 style="color: red;">juego del ahorcado</h1>
-	  <div class="row justify-content-center">
-	  <div class="col-4 m">
-	    <a href="#" class="btn btn-primary" id="btnIniciar">Iniciar Juego</a>
-	    <a href="#" class="btn btn-primary" id="btnCopiar">Agregar Palabra</a>
-		</div>
-	  </div>
-	</div>
-	
-	<hr class="mt-2">
-	<div class="row justify-content-center">
-	  <div class="col-6 m">
-			<canvas width="600" height="400"></canvas>
-			<div class="col-4 m">
-	    <input class="form-control form-control-sm mt-3" type="text" placeholder="ingrese la palabra" aria-label=".form-control-sm example" id="entrada" maxlength="1">
-		</div>
+	  <div class="d-grid gap-2 col-6 mx-auto">
+  		<button class="btn btn-primary" type="button" id="btnIniciar">Iniciar Juego</button>
+  		<button class="btn btn-primary" type="button" id="btnAgregarPalabra">Agregar Palabra</button>
 		</div>
 	</div>
- </div>
+	<hr class="mt-3">
+	<div>
+	<div class="alert alert-success" role="alert" id="alert">
+  
+	</div></div>
+  <div class="row" id="juego">
+    <div class="col-2 align-self-start">
+      <input class="form-control form-control-sm mt-3" type="text" placeholder="ingrese una letra" aria-label=".form-control-sm example" maxlength="1" onkeydown="onKeyDownHandler(event)"; id="input">
+    </div>
+    <div class="col align-self-center">
+      <canvas width="400" height="400"></canvas>
+    </div>
+   <div class="card" style="width: 30rem;">
+  <div class="card-body">
+    <h5 class="card-title" id="gameOver"> </h5>
+    <h6 class="card-subtitle mb-2 text-muted" id="palabra"> </h6>
+    <p class="card-text pt-2" id="guion"></p>
+    <p class="card-text pt-2" id="letraRepetida"></p>
+    <p class="card-text pt-2" id="letraIngresada"></p>
+  </div>
+</div>
+  </div>
+</div>
+
+
+
 </div>
 
 <!-- Footer -->
@@ -85,5 +98,8 @@
 
 <script  src="js/canvas.js"></script>
 <script  src="js/juego.js"></script>
+<script  src="js/inputkey.js"></script>
+<script  src="js/variables.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"> </script>
 
 </html>
