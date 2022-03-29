@@ -21,11 +21,13 @@ btnAgregarPalabra.addEventListener("click",function(event){
 });
 
 function onKeyDownHandler(event) {
-  event.preventDefault();
-  input.value = ' '
+    event.preventDefault();
     var key = event.which || event.keyCode;
     var keyL = event.key
-    if((key >= 65 && key <= 90) && (keyL === keyL.toUpperCase())){
+
+    if(keyL===keyL.toUpperCase()){
+      console.log('ingreso una mayuscula')
+      if((key >= 65 && key <= 90) && (keyL === keyL.toUpperCase())){        
         var letras =  String.fromCharCode(key).toLowerCase();      
         var letra = new RegExp(letras, 'i')
         var cambioGuion = cambiarGuionesPalabras(letras, guion);
@@ -45,12 +47,16 @@ function onKeyDownHandler(event) {
         };
       
             
-    }else if (key == 8 || key == 9 || key == 13 || key == 16 || key == 17 || key == 18 || key == 19 || key == 20 || key == 27 || key ==33 || key == 32 || key == 34 || key == 35 ||key == 32 ||key == 36 || key == 37 || key == 38 || key == 39 || key == 40 || key == 44 || key == 45 ||key == 46 || (key >= 112 && key <= 123)) {
+      }
+      else if(key == 8 || key == 9 || key == 13 || key == 16 || key == 17 || key == 18 || key == 19 || key == 20 || key == 27 || key ==33 || key == 32 || key == 34 || key == 35 ||key == 32 ||key == 36 || key == 37 || key == 38 || key == 39 || key == 40 || key == 44 || key == 45 ||key == 46 || (key >= 112 && key <= 123)) {
       console.log('has precionado una letra especial como shif, espacio o enter')
-    }
+      }
+    }   
     else{
     alert('solo letras MAYUSCULAS, no se permiten caracteres especiales ni numeros')
   };
+
+    input.value = ' '
 };
 
 
@@ -72,3 +78,4 @@ function btnJuego(){
         juego.style.display = "none";
     }
 }
+
