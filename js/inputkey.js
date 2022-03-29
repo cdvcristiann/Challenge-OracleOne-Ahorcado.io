@@ -25,24 +25,24 @@ function onKeyDownHandler(event) {
   input.value = ' '
     var key = event.which || event.keyCode;
     var keyL = event.key
-    if((key >= 65 && key <= 90) && (keyL == keyL.toUpperCase())){
-      var letras =  String.fromCharCode(key).toLowerCase();      
-      var letra = new RegExp(letras, 'i')
-      var cambioGuion = cambiarGuionesPalabras(letras, guion);
+    if((key >= 65 && key <= 90) && (keyL === keyL.toUpperCase())){
+        var letras =  String.fromCharCode(key).toLowerCase();      
+        var letra = new RegExp(letras, 'i')
+        var cambioGuion = cambiarGuionesPalabras(letras, guion);
 
-      letrasRepetidas(letra, letras)
+        letrasRepetidas(letra, letras)
+          
+        letraIng.innerHTML = 'LETRAS INGRESADAS : ' + letrasIngresadas;
+        console.log(' letras ingresadas  : ' + letrasIngresadas)
         
-      letraIng.innerHTML = 'LETRAS INGRESADAS : ' + letrasIngresadas;
-      console.log(' letras ingresadas  : ' + letrasIngresadas)
-      
-      if(letra.test(palabra)){
-        capturar.innerHTML = cambioGuion;
-        
-      }else{
-        errores--
-        dibujarColgado(errores)
-        console.log(errores) 
-      };
+        if(letra.test(palabra)){
+          capturar.innerHTML = cambioGuion;
+          
+        }else{
+          errores--
+          dibujarColgado(errores)
+          console.log(errores) 
+        };
       
             
     }else if (key == 8 || key == 9 || key == 13 || key == 16 || key == 17 || key == 18 || key == 19 || key == 20 || key == 27 || key ==33 || key == 32 || key == 34 || key == 35 ||key == 32 ||key == 36 || key == 37 || key == 38 || key == 39 || key == 40 || key == 44 || key == 45 ||key == 46 || (key >= 112 && key <= 123)) {
